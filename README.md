@@ -3,14 +3,20 @@
 ## Table of Contents
 
 * [Introduction](#introduction)
-* [Additional Test Steps](https://github.com/peiffer-innovations/automated_testing_framework_plugin_strings/blob/main/documentation/STEPS.md)
-* [Supported Platforms](#supported-platforms)
+* [Live Example](#live-example)
 * [Reserved Variables](#reserved-variables)
+* [Supported Platforms](#supported-platforms)
+* [Additional Test Steps](https://github.com/peiffer-innovations/automated_testing_framework_plugin_strings/blob/main/documentation/STEPS.md)
 
 
 ## Introduction
 
 This plugin provides test steps that allow for string generation and manipulation.
+
+
+## Live Example
+
+* [Web](https://peiffer-innovations.github.io/automated_testing_framework_plugin_flow_control/web/#/)
 
 
 ## Supported Platforms
