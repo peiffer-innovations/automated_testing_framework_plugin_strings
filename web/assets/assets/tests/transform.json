@@ -1,0 +1,50 @@
+{
+  "active": true,
+  "name": "Transform",
+  "steps": [{
+      "id": "set_variable",
+      "values": {
+        "type": "String",
+        "variableName": "text",
+        "value": "Mixed"
+      }
+    },
+    {
+      "id": "assert_variable_value",
+      "values": {
+        "variableName": "text",
+        "value": "Mixed"
+      }
+    },
+    {
+      "id": "transform_string",
+      "values": {
+        "variableName": "text",
+        "mode": "lowercase"
+      }
+    },
+    {
+      "id": "assert_variable_value",
+      "values": {
+        "variableName": "text",
+        "value": "mixed"
+      }
+    },
+    {
+      "id": "transform_string",
+      "values": {
+        "variableName": "text",
+        "mode": "uppercase"
+      }
+    },
+    {
+      "id": "assert_variable_value",
+      "values": {
+        "variableName": "text",
+        "value": "MIXED"
+      }
+    }
+  ],
+  "suiteName": "Strings",
+  "version": 0
+}
