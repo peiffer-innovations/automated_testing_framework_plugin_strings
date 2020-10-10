@@ -23,6 +23,26 @@ void main() {
     expect(availStep.widgetless, true);
   });
 
+  test('substring_variable', () {
+    TestStringsHelper.registerTestSteps();
+    var availStep = TestStepRegistry.instance.getAvailableTestStep(
+      'substring_variable',
+    );
+
+    expect(availStep.form.runtimeType, SubstringVariableForm);
+    expect(
+      availStep.help,
+      TestStringsTranslations.atf_strings_help_substring_variable,
+    );
+    expect(availStep.id, 'substring_variable');
+    expect(
+      availStep.title,
+      TestStringsTranslations.atf_strings_title_substring_variable,
+    );
+    expect(availStep.type, null);
+    expect(availStep.widgetless, true);
+  });
+
   test('transform_string', () {
     TestStringsHelper.registerTestSteps();
     var availStep = TestStepRegistry.instance.getAvailableTestStep(

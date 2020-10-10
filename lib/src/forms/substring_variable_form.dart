@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:form_validation/form_validation.dart';
 import 'package:static_translations/static_translations.dart';
 
-class TransformStringForm extends TestStepForm {
-  const TransformStringForm();
+class SubstringVariableForm extends TestStepForm {
+  const SubstringVariableForm();
 
   @override
   bool get supportsMinified => true;
 
   @override
   TranslationEntry get title =>
-      TestStringsTranslations.atf_strings_title_transform_string;
+      TestStringsTranslations.atf_strings_title_substring_variable;
 
   @override
   Widget buildForm(
@@ -26,21 +26,26 @@ class TransformStringForm extends TestStepForm {
         if (minify != true)
           buildHelpSection(
             context,
-            TestStringsTranslations.atf_strings_help_transform_string,
+            TestStringsTranslations.atf_strings_help_substring_variable,
             minify: minify,
           ),
         buildValuesSection(
           context,
           [
-            buildDropdown(
+            buildEditText(
               context: context,
-              id: 'mode',
-              items: [
-                'lowercase',
-                'uppercase',
+              id: 'input',
+              label: TestStringsTranslations.atf_strings_form_input,
+              validators: [
+                RequiredValidator(),
               ],
-              label: TestStringsTranslations.atf_strings_form_transform_mode,
-              validators: [RequiredValidator()],
+              values: values,
+            ),
+            SizedBox(height: 16.0),
+            buildEditText(
+              context: context,
+              id: 'regEx',
+              label: TestStringsTranslations.atf_strings_form_reg_ex,
               values: values,
             ),
             SizedBox(height: 16.0),
@@ -48,9 +53,6 @@ class TransformStringForm extends TestStepForm {
               context: context,
               id: 'variableName',
               label: TestStepTranslations.atf_form_variable_name,
-              validators: [
-                RequiredValidator(),
-              ],
               values: values,
             ),
           ],

@@ -35,13 +35,6 @@ class SetDateVariableForm extends TestStepForm {
           [
             buildEditText(
               context: context,
-              id: 'variableName',
-              label: TestStepTranslations.atf_form_variable_name,
-              values: values,
-            ),
-            SizedBox(height: 16.0),
-            buildEditText(
-              context: context,
               id: 'date',
               label: TestStringsTranslations.atf_strings_form_date,
               validators: [
@@ -66,6 +59,13 @@ class SetDateVariableForm extends TestStepForm {
                 'false',
               ],
               label: TestStringsTranslations.atf_strings_form_utc,
+              values: values,
+            ),
+            SizedBox(height: 16.0),
+            buildEditText(
+              context: context,
+              id: 'variableName',
+              label: TestStepTranslations.atf_form_variable_name,
               values: values,
             ),
           ],

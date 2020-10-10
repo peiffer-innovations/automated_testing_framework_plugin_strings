@@ -21,6 +21,19 @@ class TestStringsHelper {
       ),
       TestStepBuilder(
         availableTestStep: AvailableTestStep(
+          form: SubstringVariableForm(),
+          help: TestStringsTranslations.atf_strings_help_substring_variable,
+          id: 'substring_variable',
+          keys: const {'input', 'regEx', 'variableName'},
+          quickAddValues: null,
+          title: TestStringsTranslations.atf_strings_title_substring_variable,
+          widgetless: true,
+          type: null,
+        ),
+        testRunnerStepBuilder: SubstringVariableStep.fromDynamic,
+      ),
+      TestStepBuilder(
+        availableTestStep: AvailableTestStep(
           form: TransformStringForm(),
           help: TestStringsTranslations.atf_strings_help_transform_string,
           id: 'transform_string',

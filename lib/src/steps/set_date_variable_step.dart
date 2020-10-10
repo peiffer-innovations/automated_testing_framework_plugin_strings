@@ -10,8 +10,7 @@ class SetDateVariableStep extends TestRunnerStep {
     @required this.format,
     this.utc,
     @required this.variableName,
-  })  : assert(format != null),
-        assert(variableName?.isNotEmpty == true);
+  }) : assert(format != null);
 
   /// The date to use.  Will be [DateTime.now] when omitted.  This must be
   /// either a variable reference to a [DateTime], an int or string encoded UTC
@@ -66,7 +65,7 @@ class SetDateVariableStep extends TestRunnerStep {
   }) async {
     var date = tester.resolveVariable(this.date);
     String format = tester.resolveVariable(this.format);
-    String variableName = tester.resolveVariable(this.variableName);
+    String variableName = tester.resolveVariable(this.variableName) ?? '_date';
 
     assert(format?.isNotEmpty == true);
     assert(variableName?.isNotEmpty == true);

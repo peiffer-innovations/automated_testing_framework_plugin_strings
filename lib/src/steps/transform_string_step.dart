@@ -8,8 +8,7 @@ class TransformStringStep extends TestRunnerStep {
   TransformStringStep({
     @required this.mode,
     @required this.variableName,
-  })  : assert(mode != null),
-        assert(variableName?.isNotEmpty == true);
+  }) : assert(mode != null);
 
   /// Set to "uppercase" to transform the string held in [variableName] to
   /// uppercase.  Set to "lowercase" to transform the string held in
@@ -48,7 +47,8 @@ class TransformStringStep extends TestRunnerStep {
     @required TestController tester,
   }) async {
     var mode = tester.resolveVariable(this.mode)?.toString()?.toLowerCase();
-    String variableName = tester.resolveVariable(this.variableName);
+    String variableName =
+        tester.resolveVariable(this.variableName) ?? '_transform';
 
     assert(mode?.isNotEmpty == true);
     assert(mode == 'lowercase' || mode == 'uppercase');
