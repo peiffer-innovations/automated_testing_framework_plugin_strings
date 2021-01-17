@@ -1,4 +1,4 @@
-## [1.0.1+1] - January 10th, 2021
+## [1.0.1+2] - January 17th, 2021
 
 * Dependency updates.
 
