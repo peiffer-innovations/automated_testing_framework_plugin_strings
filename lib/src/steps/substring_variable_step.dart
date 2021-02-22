@@ -49,6 +49,7 @@ class SubstringVariableStep extends TestRunnerStep {
   /// match in [variableName]
   @override
   Future<void> execute({
+    @required CancelToken cancelToken,
     @required TestReport report,
     @required TestController tester,
   }) async {

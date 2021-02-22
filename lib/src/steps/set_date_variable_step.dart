@@ -60,6 +60,7 @@ class SetDateVariableStep extends TestRunnerStep {
   /// Sets the formatted date to a variable on the [TestController].
   @override
   Future<void> execute({
+    @required CancelToken cancelToken,
     @required TestReport report,
     @required TestController tester,
   }) async {
