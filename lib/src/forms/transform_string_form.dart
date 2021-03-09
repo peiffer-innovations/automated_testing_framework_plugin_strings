@@ -17,7 +17,7 @@ class TransformStringForm extends TestStepForm {
   @override
   Widget buildForm(
     BuildContext context,
-    Map<String, dynamic> values, {
+    Map<String, dynamic>? values, {
     bool minify = false,
   }) {
     return Column(
@@ -41,7 +41,7 @@ class TransformStringForm extends TestStepForm {
               ],
               label: TestStringsTranslations.atf_strings_form_transform_mode,
               validators: [RequiredValidator()],
-              values: values,
+              values: values!,
             ),
             SizedBox(height: 16.0),
             buildEditText(

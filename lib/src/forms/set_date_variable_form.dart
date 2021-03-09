@@ -18,7 +18,7 @@ class SetDateVariableForm extends TestStepForm {
   @override
   Widget buildForm(
     BuildContext context,
-    Map<String, dynamic> values, {
+    Map<String, dynamic>? values, {
     bool minify = false,
   }) {
     return Column(
@@ -40,7 +40,7 @@ class SetDateVariableForm extends TestStepForm {
               validators: [
                 _DateValidator(),
               ],
-              values: values,
+              values: values!,
             ),
             SizedBox(height: 16.0),
             buildEditText(
@@ -78,25 +78,25 @@ class SetDateVariableForm extends TestStepForm {
 
 class _DateValidator extends ValueValidator {
   @override
-  String validate({
-    String label,
-    Translator translator,
-    String value,
+  String? validate({
+    String? label,
+    Translator? translator,
+    String? value,
   }) {
-    String error;
+    String? error;
 
     if (value?.isNotEmpty == true) {
-      DateTime dateTime;
+      DateTime? dateTime;
       try {
         try {
-          dateTime = DateTime.fromMillisecondsSinceEpoch(int.parse(value));
+          dateTime = DateTime.fromMillisecondsSinceEpoch(int.parse(value!));
         } catch (e) {
           // no-op
         }
 
         if (dateTime == null) {
           try {
-            dateTime = DateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").parse(value);
+            dateTime = DateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").parse(value!);
           } catch (e) {
             // no-op
           }
@@ -104,7 +104,7 @@ class _DateValidator extends ValueValidator {
 
         if (dateTime == null) {
           try {
-            dateTime = DateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(value);
+            dateTime = DateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(value!);
           } catch (e) {
             // no-op
           }
@@ -114,7 +114,7 @@ class _DateValidator extends ValueValidator {
           throw Exception('No date time');
         }
       } catch (e) {
-        error = translator.translate(
+        error = translator!.translate(
           TestStringsTranslations.atf_strings_error_date,
         );
       }

@@ -7,7 +7,7 @@ void main() {
     TestStringsHelper.registerTestSteps();
     var availStep = TestStepRegistry.instance.getAvailableTestStep(
       'set_date_variable',
-    );
+    )!;
 
     expect(availStep.form.runtimeType, SetDateVariableForm);
     expect(
@@ -27,7 +27,7 @@ void main() {
     TestStringsHelper.registerTestSteps();
     var availStep = TestStepRegistry.instance.getAvailableTestStep(
       'substring_variable',
-    );
+    )!;
 
     expect(availStep.form.runtimeType, SubstringVariableForm);
     expect(
@@ -47,7 +47,7 @@ void main() {
     TestStringsHelper.registerTestSteps();
     var availStep = TestStepRegistry.instance.getAvailableTestStep(
       'transform_string',
-    );
+    )!;
 
     expect(availStep.form.runtimeType, TransformStringForm);
     expect(

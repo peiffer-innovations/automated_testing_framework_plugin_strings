@@ -1,16 +1,13 @@
 import 'package:automated_testing_framework/automated_testing_framework.dart';
-import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 
 /// Test step that will search for a given [regEx] inside an [input] string and
 /// will set [variableName] with the first match.
 class SubstringVariableStep extends TestRunnerStep {
   SubstringVariableStep({
-    @required this.input,
-    @required this.regEx,
-    @required this.variableName,
-  })  : assert(input != null),
-        assert(regEx != null);
+    required this.input,
+    required this.regEx,
+    required this.variableName,
+  });
 
   /// The input string to search.
   final String input;
@@ -19,7 +16,7 @@ class SubstringVariableStep extends TestRunnerStep {
   final String regEx;
 
   /// The variable name of the variable to set on the controller.
-  final String variableName;
+  final String? variableName;
 
   /// Creates an instance from a JSON-like map structure.  This expects the
   /// following format:
@@ -34,7 +31,9 @@ class SubstringVariableStep extends TestRunnerStep {
   static SubstringVariableStep fromDynamic(dynamic map) {
     SubstringVariableStep result;
 
-    if (map != null) {
+    if (map == null) {
+      throw Exception('[SubstringVariableStep.fromDynamic]: map is null');
+    } else {
       result = SubstringVariableStep(
         input: map['input'],
         regEx: map['regEx'],
@@ -49,13 +48,13 @@ class SubstringVariableStep extends TestRunnerStep {
   /// match in [variableName]
   @override
   Future<void> execute({
-    @required CancelToken cancelToken,
-    @required TestReport report,
-    @required TestController tester,
+    required CancelToken cancelToken,
+    required TestReport report,
+    required TestController tester,
   }) async {
     var input = tester.resolveVariable(this.input)?.toString();
     var regEx = tester.resolveVariable(this.regEx)?.toString();
-    String variableName =
+    var variableName =
         tester.resolveVariable(this.variableName) ?? '_substring';
 
     assert(input?.isNotEmpty == true);
@@ -68,14 +67,16 @@ class SubstringVariableStep extends TestRunnerStep {
       tester: tester,
     );
 
-    var regExp = RegExp(regEx);
-    var match = regExp.firstMatch(input);
+    var regExp = RegExp(regEx!);
+    var match = regExp.firstMatch(input!);
 
-    String result;
-    if (match.groupCount >= 1) {
-      result = match.group(1);
-    } else {
-      result = match.group(0);
+    String? result;
+    if (match != null) {
+      if (match.groupCount >= 1) {
+        result = match.group(1);
+      } else {
+        result = match.group(0);
+      }
     }
 
     if (result == null) {
