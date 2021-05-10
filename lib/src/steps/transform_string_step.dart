@@ -8,6 +8,12 @@ class TransformStringStep extends TestRunnerStep {
     required this.variableName,
   });
 
+  static const id = 'transform_string';
+
+  static List<String> get behaviorDrivenDescriptions => List.unmodifiable([
+        'transform the string inside the `{{variableName}}` variable to `{{mode}}`.',
+      ]);
+
   /// Set to "uppercase" to transform the string held in [variableName] to
   /// uppercase.  Set to "lowercase" to transform the string held in
   /// [variableName] to lowercase.  Any other value will result in an error.
@@ -15,6 +21,9 @@ class TransformStringStep extends TestRunnerStep {
 
   /// The variable name of the variable to set on the controller.
   final String? variableName;
+
+  @override
+  String get stepId => id;
 
   /// Creates an instance from a JSON-like map structure.  This expects the
   /// following format:
@@ -79,6 +88,17 @@ class TransformStringStep extends TestRunnerStep {
       variableName: variableName,
       value: result,
     );
+  }
+
+  @override
+  String getBehaviorDrivenDescription(TestController tester) {
+    var result = behaviorDrivenDescriptions[0];
+
+    result = result.replaceAll('{{mode}}', mode);
+    result =
+        result.replaceAll('{{variableName}}', variableName ?? '_transform');
+
+    return result;
   }
 
   /// Overidden to ignore the delay

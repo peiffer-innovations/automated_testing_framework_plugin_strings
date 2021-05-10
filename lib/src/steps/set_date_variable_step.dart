@@ -10,6 +10,13 @@ class SetDateVariableStep extends TestRunnerStep {
     required this.variableName,
   });
 
+  static const String id = 'set_date_variable';
+
+  static List<String> get behaviorDrivenDescriptions => List.unmodifiable([
+        'set the current date time to the `{{variableName}}` variable using the `{{format}}` format in `{{utc}}` timezone.',
+        'set `{{date}}`` as the date time to the `{{variableName}}` variable using the `{{format}}` format in `{{utc}}` timezone.',
+      ]);
+
   /// The date to use.  Will be [DateTime.now] when omitted.  This must be
   /// either a variable reference to a [DateTime], an int or string encoded UTC
   /// Millis, or UTC formatted using either of the two formats:
@@ -28,6 +35,9 @@ class SetDateVariableStep extends TestRunnerStep {
 
   /// The variable name of the variable to set on the controller.
   final String? variableName;
+
+  @override
+  String get stepId => id;
 
   /// Creates an instance from a JSON-like map structure.  This expects the
   /// following format:
@@ -71,7 +81,7 @@ class SetDateVariableStep extends TestRunnerStep {
     assert(format?.isNotEmpty == true);
     assert(variableName.isNotEmpty == true);
 
-    var name = "set_date_variable('$variableName', '$date', '$format')";
+    var name = "$id('$variableName', '$date', '$format')";
     log(
       name,
       tester: tester,
@@ -118,6 +128,20 @@ class SetDateVariableStep extends TestRunnerStep {
       variableName: variableName,
       value: DateFormat(format).format(dateTime),
     );
+  }
+
+  @override
+  String getBehaviorDrivenDescription(TestController tester) {
+    var result = date == null
+        ? behaviorDrivenDescriptions[0]
+        : behaviorDrivenDescriptions[1];
+
+    result = result.replaceAll('{{date}}', date ?? 'null');
+    result = result.replaceAll('{{format}}', format);
+    result = result.replaceAll('{{utc}}', utc == true ? 'utc' : 'local');
+    result = result.replaceAll('{{variableName}}', variableName ?? '_date');
+
+    return result;
   }
 
   /// Overidden to ignore the delay

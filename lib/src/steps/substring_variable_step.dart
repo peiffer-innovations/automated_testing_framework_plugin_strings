@@ -9,6 +9,12 @@ class SubstringVariableStep extends TestRunnerStep {
     required this.variableName,
   });
 
+  static const id = 'substring_variable';
+
+  static List<String> get behaviorDrivenDescriptions => List.unmodifiable([
+        'search the input `{{input}}` for the `{{regEx}}` regular expression and sets the contents of the match to the `{{variableName}}` variable.',
+      ]);
+
   /// The input string to search.
   final String input;
 
@@ -17,6 +23,9 @@ class SubstringVariableStep extends TestRunnerStep {
 
   /// The variable name of the variable to set on the controller.
   final String? variableName;
+
+  @override
+  String get stepId => id;
 
   /// Creates an instance from a JSON-like map structure.  This expects the
   /// following format:
@@ -61,7 +70,7 @@ class SubstringVariableStep extends TestRunnerStep {
     assert(regEx?.isNotEmpty == true);
     assert(variableName?.isNotEmpty == true);
 
-    var name = "substring_variable('$variableName', '$input', '$regEx')";
+    var name = "$id('$variableName', '$input', '$regEx')";
     log(
       name,
       tester: tester,
@@ -81,13 +90,27 @@ class SubstringVariableStep extends TestRunnerStep {
 
     if (result == null) {
       throw Exception(
-          'substring_variable: No match in [$input] found for the pattern: [$regEx].');
+          '$id: No match in [$input] found for the pattern: [$regEx].');
     }
 
     tester.setVariable(
       variableName: variableName,
       value: result,
     );
+  }
+
+  @override
+  String getBehaviorDrivenDescription(TestController tester) {
+    var result = behaviorDrivenDescriptions[0];
+
+    result = result.replaceAll('{{inout}}', input);
+    result = result.replaceAll('{{regEx}}', regEx);
+    result = result.replaceAll(
+      '{{variableName}}',
+      variableName ?? '_substring',
+    );
+
+    return result;
   }
 
   /// Overidden to ignore the delay

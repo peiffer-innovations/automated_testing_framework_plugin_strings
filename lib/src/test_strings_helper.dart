@@ -10,7 +10,7 @@ class TestStringsHelper {
         availableTestStep: AvailableTestStep(
           form: SetDateVariableForm(),
           help: TestStringsTranslations.atf_strings_help_set_date_variable,
-          id: 'set_date_variable',
+          id: SetDateVariableStep.id,
           keys: const {'date', 'format', 'utc', 'variableName'},
           quickAddValues: null,
           title: TestStringsTranslations.atf_strings_title_set_date_variable,
@@ -23,7 +23,7 @@ class TestStringsHelper {
         availableTestStep: AvailableTestStep(
           form: SubstringVariableForm(),
           help: TestStringsTranslations.atf_strings_help_substring_variable,
-          id: 'substring_variable',
+          id: SubstringVariableStep.id,
           keys: const {'input', 'regEx', 'variableName'},
           quickAddValues: null,
           title: TestStringsTranslations.atf_strings_title_substring_variable,
@@ -36,7 +36,7 @@ class TestStringsHelper {
         availableTestStep: AvailableTestStep(
           form: TransformStringForm(),
           help: TestStringsTranslations.atf_strings_help_transform_string,
-          id: 'transform_string',
+          id: TransformStringStep.id,
           keys: const {'mode', 'variableName'},
           quickAddValues: null,
           title: TestStringsTranslations.atf_strings_title_transform_string,
