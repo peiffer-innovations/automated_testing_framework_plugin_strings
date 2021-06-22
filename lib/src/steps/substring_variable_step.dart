@@ -93,7 +93,7 @@ class SubstringVariableStep extends TestRunnerStep {
           '$id: No match in [$input] found for the pattern: [$regEx].');
     }
 
-    tester.setVariable(
+    tester.setTestVariable(
       variableName: variableName,
       value: result,
     );

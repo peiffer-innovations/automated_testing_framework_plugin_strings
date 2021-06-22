@@ -84,7 +84,7 @@ class TransformStringStep extends TestRunnerStep {
         throw Exception('Unknown transformation mode: [$mode]');
     }
 
-    tester.setVariable(
+    tester.setTestVariable(
       variableName: variableName,
       value: result,
     );

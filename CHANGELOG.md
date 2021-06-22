@@ -1,3 +1,8 @@
+## [3.0.1+1] - June 22nd, 2021
+
+* Updated with the latest framework and removed deprecated references.
+
+
 ## [3.0.1] - May 9th, 2021
 
 * Added BDD values to the steps.

@@ -29,7 +29,7 @@ class SetDateVariableStep extends TestRunnerStep {
   final String format;
 
   /// Set to [true] to leave the emitted [DateTime] in UTC.  Set to [false] or
-  /// [null] to convert the [DateTime] to the local timezone before setting the
+  /// `null` to convert the [DateTime] to the local timezone before setting the
   /// variable.
   final bool? utc;
 
@@ -124,7 +124,7 @@ class SetDateVariableStep extends TestRunnerStep {
       dateTime = dateTime.toLocal();
     }
 
-    tester.setVariable(
+    tester.setTestVariable(
       variableName: variableName,
       value: DateFormat(format).format(dateTime),
     );
