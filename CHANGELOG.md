@@ -1,3 +1,8 @@
+## [3.0.2] - June 24th, 2021
+
+* Updated `set_date_variable` with the ability to have an offset value.
+
+
 ## [3.0.1+1] - June 22nd, 2021
 
 * Updated with the latest framework and removed deprecated references.

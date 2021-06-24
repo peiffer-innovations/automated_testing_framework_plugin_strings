@@ -33,7 +33,11 @@ Test Step IDs                             | Description
 
 **How it Works**
 
-1. Clears all logs from the current `TestReport`.
+1. Gets either the current DateTime or the DateTime from the `date` variable.
+2. Applies the appropriate offset.
+3. Transforms it into either the UTC or Local timezone.
+4. Applies the requested format.
+5. Sets the final ersult into the variable named `variableName`.
 
 
 **Example**
@@ -45,6 +49,10 @@ Test Step IDs                             | Description
   "values": {
     "date": "2020-01-01T12:00:00Z",
     "format": "yyyy-MM-dd",
+    "offsetDays": 1,
+    "offsetHours": 2,
+    "offsetMinutes": 3,
+    "offsetSeconds": 4,
     "utc": false,
     "variableName": "formattedDate"
   }
@@ -53,12 +61,16 @@ Test Step IDs                             | Description
 
 **Values**
 
-Key            | Type   | Required | Supports Variable | Description
----------------|--------|----------|-------------------|-------------
-`date`         | String | No       | Yes               | The date value.  If a variable is used, this can be a `DateTime`, an `int` that represents UTC Millis, or it can be directly a string formatted as either: `yyyy-MM-dd'T'HH:mm:ss'Z'` or `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`.  If omitted, this will default to `DateTime.now()`.
-`format`       | String | Yes      | Yes               | The format to apply to the `date`.
-`utc`          | bool   | No       | Yes               | Set to `true` to write the formatted date in UTC.  Set to `false` to write it out in the device's local time zone.  Defaults to `false`.
-`variableName` | String | No       | Yes               | The variable name to write the formatted date string to.  Defaults to `_date` if omitted.
+Key             | Type   | Required | Supports Variable | Description
+----------------|--------|----------|-------------------|-------------
+`date`          | String | No       | Yes               | The date value.  If a variable is used, this can be a `DateTime`, an `int` that represents UTC Millis, or it can be directly a string formatted as either: `yyyy-MM-dd'T'HH:mm:ss'Z'` or `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`.  If omitted, this will default to `DateTime.now()`.
+`format`        | String | Yes      | Yes               | The format to apply to the `date`.
+`offsetDays`    | int    | No       | Yes               | The number of days to offset the date by; may be negative; defaults to zero.
+`offsetHours`   | int    | No       | Yes               | The number of hours to offset the date by; may be negative; defaults to zero.
+`offsetMinutes` | int    | No       | Yes               | The number of minutes to offset the date by; may be negative; defaults to zero.
+`offsetSeconds` | int    | No       | Yes               | The number of seconds to offset the date by; may be negative; defaults to zero.
+`utc`           | bool   | No       | Yes               | Set to `true` to write the formatted date in UTC.  Set to `false` to write it out in the device's local time zone.  Defaults to `false`.
+`variableName`  | String | No       | Yes               | The variable name to write the formatted date string to.  Defaults to `_date` if omitted.
 
 ---
 

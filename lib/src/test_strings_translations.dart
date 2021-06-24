@@ -26,6 +26,26 @@ class TestStringsTranslations {
     value: 'RegEx',
   );
 
+  static const atf_strings_form_offset_days = TranslationEntry(
+    key: 'atf_strings_form_offset_days',
+    value: 'Offset in Days',
+  );
+
+  static const atf_strings_form_offset_hours = TranslationEntry(
+    key: 'atf_strings_form_offset_hours',
+    value: 'Offset in Hours',
+  );
+
+  static const atf_strings_form_offset_minutes = TranslationEntry(
+    key: 'atf_strings_form_offset_minutes',
+    value: 'Offset in Minutes',
+  );
+
+  static const atf_strings_form_offset_seconds = TranslationEntry(
+    key: 'atf_strings_form_offset_seconds',
+    value: 'Offset in Seconds',
+  );
+
   static const atf_strings_form_transform_mode = TranslationEntry(
     key: 'atf_strings_form_transform_mode',
     value: 'Mode',
