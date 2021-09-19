@@ -1,3 +1,8 @@
+## [3.0.2+1] - September 19th, 2021
+
+* Dependency updates
+
+
 ## [3.0.2] - June 24th, 2021
 
 * Updated `set_date_variable` with the ability to have an offset value.
