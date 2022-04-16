@@ -130,7 +130,7 @@ class SetDateVariableStep extends TestRunnerStep {
           );
         }
       } else {
-        dateTime = DateTime.fromMicrosecondsSinceEpoch(
+        dateTime = DateTime.fromMillisecondsSinceEpoch(
           int.parse(date),
           isUtc: true,
         );

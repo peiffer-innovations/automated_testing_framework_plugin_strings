@@ -1,3 +1,9 @@
+## [3.0.4] - April 16th, 2022
+
+* Bug fix for milliseconds since epoch
+* Dependency updates
+
+
 ## [3.0.3+2] - February 6th, 2022
 
 * Dependency updates
