@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - .github/workflows/publisher.yaml
+      - example/pubspec.yaml
       - lib/**
       - pubspec.yaml
 
