@@ -32,10 +32,10 @@ const RESOURCES = {
 "assets/FontManifest.json": "7b2a36307916a9721811788013e65289",
 "assets/NOTICES": "9e3c2ef5a3f456f9ad6dffffb3a3b995",
 "flutter.js": "eb2682e33f25cd8f1fc59011497c35f8",
-"index.html": "40467936413112c824837db2d18a06dc",
-"/": "40467936413112c824837db2d18a06dc",
+"index.html": "d1700651680731e4fe9ac74d7e5aed57",
+"/": "d1700651680731e4fe9ac74d7e5aed57",
 "favicon.png": "b8c1562d93ab8187169ae07688b7dabe",
-"version.json": "50ecf573e89a0e7912cb259f3f7aefa6",
+"version.json": "3ddb05f6a10bb8b612ae2489d81d1a9f",
 "manifest.json": "15f73b7e8a8209c2206210b3ac8dea1b",
 "icons/Icon-192.png": "5eb54d5b6cf46c6f10bbf1e681d7df4e",
 "icons/Icon-512.png": "90488f768a12432aab12ae7460e95233"
