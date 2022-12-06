@@ -56,15 +56,15 @@ class TransformStringStep extends TestRunnerStep {
     required TestReport report,
     required TestController tester,
   }) async {
-    var mode = tester.resolveVariable(this.mode)?.toString().toLowerCase();
-    String variableName =
+    final mode = tester.resolveVariable(this.mode)?.toString().toLowerCase();
+    final variableName =
         tester.resolveVariable(this.variableName) ?? '_transform';
 
     assert(mode?.isNotEmpty == true);
     assert(mode == 'lowercase' || mode == 'uppercase');
     assert(variableName.isNotEmpty == true);
 
-    var name = "transform_string('$variableName', '$mode')";
+    final name = "transform_string('$variableName', '$mode')";
     log(
       name,
       tester: tester,

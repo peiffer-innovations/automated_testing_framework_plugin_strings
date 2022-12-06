@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   test('set_date_variable', () {
     TestStringsHelper.registerTestSteps();
-    var availStep = TestStepRegistry.instance.getAvailableTestStep(
+    final availStep = TestStepRegistry.instance.getAvailableTestStep(
       'set_date_variable',
     )!;
 
@@ -25,7 +25,7 @@ void main() {
 
   test('substring_variable', () {
     TestStringsHelper.registerTestSteps();
-    var availStep = TestStepRegistry.instance.getAvailableTestStep(
+    final availStep = TestStepRegistry.instance.getAvailableTestStep(
       'substring_variable',
     )!;
 
@@ -45,7 +45,7 @@ void main() {
 
   test('transform_string', () {
     TestStringsHelper.registerTestSteps();
-    var availStep = TestStepRegistry.instance.getAvailableTestStep(
+    final availStep = TestStepRegistry.instance.getAvailableTestStep(
       'transform_string',
     )!;
 

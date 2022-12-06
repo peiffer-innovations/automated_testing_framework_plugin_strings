@@ -39,7 +39,7 @@ class SetDateVariableForm extends TestStepForm {
               label: TestStepTranslations.atf_form_variable_name,
               values: values!,
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             buildEditText(
               context: context,
               id: 'date',
@@ -49,7 +49,7 @@ class SetDateVariableForm extends TestStepForm {
               ],
               values: values,
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             buildDropdown(
               context: context,
               defaultValue: 'false',
@@ -61,14 +61,14 @@ class SetDateVariableForm extends TestStepForm {
               label: TestStringsTranslations.atf_strings_form_utc,
               values: values,
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             buildEditText(
               context: context,
               id: 'format',
               label: TestStringsTranslations.atf_strings_form_format,
               values: values,
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             buildEditText(
               context: context,
               id: 'offsetDays',
@@ -76,7 +76,7 @@ class SetDateVariableForm extends TestStepForm {
               validators: [NumberValidator(allowDecimal: false)],
               values: values,
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             buildEditText(
               context: context,
               id: 'offsetHours',
@@ -84,7 +84,7 @@ class SetDateVariableForm extends TestStepForm {
               validators: [NumberValidator(allowDecimal: false)],
               values: values,
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             buildEditText(
               context: context,
               id: 'offsetMinutes',
@@ -92,7 +92,7 @@ class SetDateVariableForm extends TestStepForm {
               validators: [NumberValidator(allowDecimal: false)],
               values: values,
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             buildEditText(
               context: context,
               id: 'offsetSeconds',

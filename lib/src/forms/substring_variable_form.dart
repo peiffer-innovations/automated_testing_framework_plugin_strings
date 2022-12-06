@@ -41,14 +41,14 @@ class SubstringVariableForm extends TestStepForm {
               ],
               values: values!,
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             buildEditText(
               context: context,
               id: 'regEx',
               label: TestStringsTranslations.atf_strings_form_reg_ex,
               values: values,
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             buildEditText(
               context: context,
               id: 'variableName',

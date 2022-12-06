@@ -93,14 +93,14 @@ class SetDateVariableStep extends TestRunnerStep {
     required TestReport report,
     required TestController tester,
   }) async {
-    var date = tester.resolveVariable(this.date);
-    String? format = tester.resolveVariable(this.format);
-    String variableName = tester.resolveVariable(this.variableName) ?? '_date';
+    final date = tester.resolveVariable(this.date);
+    final format = tester.resolveVariable(this.format);
+    final variableName = tester.resolveVariable(this.variableName) ?? '_date';
 
     assert(format?.isNotEmpty == true);
     assert(variableName.isNotEmpty == true);
 
-    var name = "$id('$variableName', '$date', '$format')";
+    final name = "$id('$variableName', '$date', '$format')";
     log(
       name,
       tester: tester,
@@ -160,7 +160,7 @@ class SetDateVariableStep extends TestRunnerStep {
 
   @override
   String getBehaviorDrivenDescription(TestController tester) {
-    var hasOffset = offsetDays != 0 ||
+    final hasOffset = offsetDays != 0 ||
         offsetHours != 0 ||
         offsetMinutes != 0 ||
         offsetSeconds != 0;

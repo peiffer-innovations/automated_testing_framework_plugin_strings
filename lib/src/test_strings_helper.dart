@@ -7,11 +7,11 @@ class TestStringsHelper {
   static void registerTestSteps([TestStepRegistry? registry]) {
     (registry ?? TestStepRegistry.instance).registerCustomSteps([
       TestStepBuilder(
-        availableTestStep: AvailableTestStep(
+        availableTestStep: const AvailableTestStep(
           form: SetDateVariableForm(),
           help: TestStringsTranslations.atf_strings_help_set_date_variable,
           id: SetDateVariableStep.id,
-          keys: const {
+          keys: {
             'date',
             'format',
             'offsetDays',
@@ -29,11 +29,11 @@ class TestStringsHelper {
         testRunnerStepBuilder: SetDateVariableStep.fromDynamic,
       ),
       TestStepBuilder(
-        availableTestStep: AvailableTestStep(
+        availableTestStep: const AvailableTestStep(
           form: SubstringVariableForm(),
           help: TestStringsTranslations.atf_strings_help_substring_variable,
           id: SubstringVariableStep.id,
-          keys: const {'input', 'regEx', 'variableName'},
+          keys: {'input', 'regEx', 'variableName'},
           quickAddValues: null,
           title: TestStringsTranslations.atf_strings_title_substring_variable,
           widgetless: true,
@@ -42,11 +42,11 @@ class TestStringsHelper {
         testRunnerStepBuilder: SubstringVariableStep.fromDynamic,
       ),
       TestStepBuilder(
-        availableTestStep: AvailableTestStep(
+        availableTestStep: const AvailableTestStep(
           form: TransformStringForm(),
           help: TestStringsTranslations.atf_strings_help_transform_string,
           id: TransformStringStep.id,
-          keys: const {'mode', 'variableName'},
+          keys: {'mode', 'variableName'},
           quickAddValues: null,
           title: TestStringsTranslations.atf_strings_title_transform_string,
           widgetless: true,

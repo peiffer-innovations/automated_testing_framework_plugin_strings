@@ -61,23 +61,23 @@ class SubstringVariableStep extends TestRunnerStep {
     required TestReport report,
     required TestController tester,
   }) async {
-    var input = tester.resolveVariable(this.input)?.toString();
-    var regEx = tester.resolveVariable(this.regEx)?.toString();
-    var variableName =
+    final input = tester.resolveVariable(this.input)?.toString();
+    final regEx = tester.resolveVariable(this.regEx)?.toString();
+    final variableName =
         tester.resolveVariable(this.variableName) ?? '_substring';
 
     assert(input?.isNotEmpty == true);
     assert(regEx?.isNotEmpty == true);
     assert(variableName?.isNotEmpty == true);
 
-    var name = "$id('$variableName', '$input', '$regEx')";
+    final name = "$id('$variableName', '$input', '$regEx')";
     log(
       name,
       tester: tester,
     );
 
-    var regExp = RegExp(regEx!);
-    var match = regExp.firstMatch(input!);
+    final regExp = RegExp(regEx!);
+    final match = regExp.firstMatch(input!);
 
     String? result;
     if (match != null) {

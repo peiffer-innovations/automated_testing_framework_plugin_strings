@@ -43,7 +43,7 @@ class TransformStringForm extends TestStepForm {
               validators: [RequiredValidator()],
               values: values!,
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             buildEditText(
               context: context,
               id: 'variableName',
