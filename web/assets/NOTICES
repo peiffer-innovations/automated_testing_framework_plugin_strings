@@ -2078,6 +2078,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 --------------------------------------------------------------------------------
 automated_testing_framework_example
+automated_testing_framework_plugin_strings
 
 MIT License
 
@@ -2132,7 +2133,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 --------------------------------------------------------------------------------
 automated_testing_framework_plugin_flow_control
-automated_testing_framework_plugin_strings
 
 MIT License
 
