@@ -1,19 +1,19 @@
 name: 'automated_testing_framework_plugin_strings'
 description: 'Library to use provide string generation and maipulation capabilities to the testing framework.'
 homepage: 'https://github.com/peiffer-innovations/automated_testing_framework_plugin_strings'
-version: '4.0.0+26'
+version: '4.0.0+27'
 
 environment: 
   sdk: '>=2.18.0 <3.0.0'
 
 dependencies: 
-  automated_testing_framework: '^4.0.7+13'
+  automated_testing_framework: '^4.0.7+14'
   flutter: 
     sdk: 'flutter'
-  form_validation: '^2.2.0+4'
+  form_validation: '^2.2.0+5'
   intl: '^0.18.0'
-  json_class: '^2.1.4'
-  json_theme: '^4.0.3+3'
+  json_class: '^2.1.4+1'
+  json_theme: '^4.0.3+4'
   logging: '^1.1.0'
   static_translations: '^2.1.1+21'
 
